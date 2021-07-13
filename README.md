@@ -1,6 +1,6 @@
 # Publication Collector
 
-[![CircleCI](https://img.shields.io/circleci/project/johanbrook/meteor-publication-collector.svg?maxAge=2592000)]()
+[![CircleCI](https://img.shields.io/circleci/project/corefihub/meteor-publication-collector.svg?maxAge=2592000)]()
 
 This package makes testing publications in Meteor easier and nicer.
 
@@ -25,7 +25,7 @@ Instead of resorting to exporting or exposing your publication functions for doi
 ## Installation
 
 ```
-meteor add johanbrook:publication-collector
+meteor add corefihub:publication-collector
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ This package is server-only and can't be imported on the client.
 ```js
 // server/myPublication.test.js
 
-import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
+import { PublicationCollector } from 'meteor/corefihub:publication-collector';
 
 describe('myPublication', function() {
   it('should publish 10 documents', function(done) {
@@ -128,23 +128,25 @@ Based on https://github.com/stubailo/meteor-rest/blob/devel/packages/rest/http-s
 ## Releases
 
 - `1.1.0`
+  - forked from shankwilers-fork which fixes a bug when collecting empty collections
+- `1.1.0`
   - Pin versions to Meteor@>=1.3.
   - Throw error when there's no publication for the provided name.
   - Upgrade dependencies.
-  - Add support for Promises in the `.collect()` method. **Note:** This breaks tests that rely on errors being thrown in the `collect()` method (see [#36](https://github.com/johanbrook/meteor-publication-collector/issues/36)).
+  - Add support for Promises in the `.collect()` method. **Note:** This breaks tests that rely on errors being thrown in the `collect()` method (see [#36](https://github.com/corefihub/meteor-publication-collector/issues/36)).
 - `1.0.10` - Always stop the publication when an error is thrown in the PublicationCollector callback. Thanks @SimonSimCity !
 - `1.0.9` - Fix bug in 1.0.8 regarding empty array return. Thanks @nkahnfr !
 - `1.0.8` - Fix support for publications returning nothing (an empty array). Thanks @ziedmahdi !
-- `1.0.7` - Fix compatibility with `peerlibrary:reactive-publish`'s `_isDeactivated` function in publications ([#20](https://github.com/johanbrook/meteor-publication-collector/pull/23), thanks @jaskinn!).
-- `1.0.6` - Fix an issue with "ready" event being emitted more than once ([#16](https://github.com/johanbrook/meteor-publication-collector/pull/16)). Thanks @nkahnfr!
-- `1.0.5` - Fix an issue when publish handlers are using default arguments ([#15](https://github.com/johanbrook/meteor-publication-collector/pull/15)). Thanks @dmihal!
-- `1.0.4` - Don't try to operate on a document that doesn't exist in `changed` callback. Thanks @zenweasel, from [#13](https://github.com/johanbrook/meteor-publication-collector/pull/13)!
-- `1.0.3` - Fix compatibility with `peerlibrary:reactive-publish` package (bug #3), fixed in [#10](https://github.com/johanbrook/meteor-publication-collector/pull/10). Thanks [@hexsprite](https://github.com/hexsprite)!
+- `1.0.7` - Fix compatibility with `peerlibrary:reactive-publish`'s `_isDeactivated` function in publications ([#20](https://github.com/corefihub/meteor-publication-collector/pull/23), thanks @jaskinn!).
+- `1.0.6` - Fix an issue with "ready" event being emitted more than once ([#16](https://github.com/corefihub/meteor-publication-collector/pull/16)). Thanks @nkahnfr!
+- `1.0.5` - Fix an issue when publish handlers are using default arguments ([#15](https://github.com/corefihub/meteor-publication-collector/pull/15)). Thanks @dmihal!
+- `1.0.4` - Don't try to operate on a document that doesn't exist in `changed` callback. Thanks @zenweasel, from [#13](https://github.com/corefihub/meteor-publication-collector/pull/13)!
+- `1.0.3` - Fix compatibility with `peerlibrary:reactive-publish` package (bug #3), fixed in [#10](https://github.com/corefihub/meteor-publication-collector/pull/10). Thanks [@hexsprite](https://github.com/hexsprite)!
 - `1.0.2` - Fix bug where `ready()` wasn't called if there were no results from a publication handler.
 - `1.0.1`
-  - Fixes inconsistent results from publication collector (thanks @PhilippSpo in [#2](https://github.com/johanbrook/meteor-publication-collector/issues/2)).
-  - Return an empty array if there are no returned documents from a publication ([#5](https://github.com/johanbrook/meteor-publication-collector/issues/5)).
-  - Accept `Mongo.ObjectID` as `_id` attribute ([#8](https://github.com/johanbrook/meteor-publication-collector/issues/8)).
+  - Fixes inconsistent results from publication collector (thanks @PhilippSpo in [#2](https://github.com/corefihub/meteor-publication-collector/issues/2)).
+  - Return an empty array if there are no returned documents from a publication ([#5](https://github.com/corefihub/meteor-publication-collector/issues/5)).
+  - Accept `Mongo.ObjectID` as `_id` attribute ([#8](https://github.com/corefihub/meteor-publication-collector/issues/8)).
 - `1.0.0` - First public release.
 
 ## To do

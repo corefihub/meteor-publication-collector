@@ -1,11 +1,11 @@
 /* eslint-disable prefer-arrow-callback */
 
 Package.describe({
-  name: 'johanbrook:publication-collector',
-  version: '1.1.0',
+  name: 'corefihub:publication-collector',
+  version: '1.1.1',
   summary: 'Test a Meteor publication by collecting its output.',
   documentation: 'README.md',
-  git: 'https://github.com/johanbrook/meteor-publication-collector.git',
+  git: 'https://github.com/corefihub/meteor-publication-collector.git',
   debugOnly: true
 });
 
